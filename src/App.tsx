@@ -1,34 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Title from './components/title/Title'
+import Text from './components/text/Text'
+import Cta from './components/cta/Cta'
+import Form from './components/form/Form'
+import TextInput from './components/inputs/TextInput'
+import EmailInput from './components/inputs/EmailInput'
+import PasswordInput from './components/inputs/PasswordInput'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="w-full h-screen bg-image">
+      <div className="w-full h-full flex flex-col items-center justify-center px-8">
+        <Title text="Learn to Code by watching others" className="mb-8"/>
+        <Text text="See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable."/>
+        <Cta wrapperClassName="my-8">
+          <p className="text-center text-white">
+            <strong className="">Try it free 7 days </strong> 
+            then $20/mo. thereafter
+          </p>
+        </Cta>
+        <Form className="w-full space-y-4">
+          <TextInput id="firstName" name="firstName" placeholder="First Name" />
+          <TextInput id="lastName" name="lastName" placeholder="Last Name" />
+          <EmailInput id="email" name="email" placeholder="Email Address" />
+          <PasswordInput id="password" name="password" placeholder="Password" />
+        </Form>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
